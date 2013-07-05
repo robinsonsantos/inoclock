@@ -3,7 +3,7 @@ inoclock
 
 A simple clock made with arduino and 8x2 LCD display
 
-Parts:
+|Parts:|
 
 * 1 - Arduino Duemilanove
 * 1 - 8x2 LCD display - GDM0802B-FL-YBW

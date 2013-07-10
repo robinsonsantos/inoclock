@@ -41,21 +41,21 @@
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
-int segundo;
-int minuto;
-int hora;
+int seconds;
+int minutes;
+int hours;
 
 void setup() {
   
-  segundo = 0;
-  minuto = 58;
-  hora = 23;
+  seconds = 0;
+  minutes = 58;
+  hours = 23;
   
   // set up the LCD's number of columns and rows: 
   lcd.begin(8, 2);
   lcd.setCursor(0, 0);
   // Print a message to the LCD.
-  lcd.print("Relogio:");
+  lcd.print("Is Alive");
 }
 
 void loop() {
@@ -65,43 +65,43 @@ void loop() {
   // print the number of seconds since reset:
   //lcd.print(millis()/1000);
   
-  segundo++;
-  if (segundo >= 60)
+  seconds++;
+  if (seconds >= 60)
   {
-    minuto++;
-    segundo = 0;
+    minutes++;
+    seconds = 0;
   }
   
-  if (minuto >= 60)
+  if (minutes >= 60)
   {
-    hora++;
-    minuto = 0;
+    hours++;
+    minutes = 0;
   }
   
-  if (hora >= 24)
+  if (hours >= 24)
   {
-    hora = 0;
+    hours = 0;
   }
   
-  if (hora < 10)
+  if (hours < 10)
   {
     lcd.print("0");
   }
-  lcd.print(hora);
+  lcd.print(hours);
   lcd.print(":");
   
-  if (minuto < 10)
+  if (minutes < 10)
   {
     lcd.print("0");
   }
-  lcd.print(minuto);
+  lcd.print(minutes);
   lcd.print(":");
   
-  if (segundo < 10)
+  if (seconds < 10)
   {
     lcd.print("0");
   }
-  lcd.print(segundo);
+  lcd.print(seconds);
   
   delay(1000);
 }

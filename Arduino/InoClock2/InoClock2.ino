@@ -1,7 +1,7 @@
 /*
   LiquidCrystal Library - Hello World
  
- Demonstrates the use a 16x2 LCD display.  The LiquidCrystal
+ Demonstrates the use a 8x2 LCD display.  The LiquidCrystal
  library works with all LCD displays that are compatible with the 
  Hitachi HD44780 driver. There are many of them out there, and you
  can usually tell them by the 16-pin interface.
@@ -42,15 +42,28 @@
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
+const int pin_6 = 6;
+const int pin_7 = 7;
+const int pin_8 = 8;
+const int pin_9 = 9;
+
 int seconds;
 int minutes;
 int hours;
+int tela = 0;
+int buttonState = 0;
 
 void setup() {
   
-  seconds = 0;
-  minutes = 58;
+  pinMode(pin_6, INPUT);
+  pinMode(pin_7, INPUT);
+  pinMode(pin_8, INPUT);
+  pinMode(pin_9, INPUT);
+  
+  seconds = 20;
+  minutes = 28;
   hours = 23;
+  
   
   // set up the LCD's number of columns and rows: 
   lcd.begin(8, 2);
@@ -60,10 +73,19 @@ void setup() {
   
   Timer1.initialize(1000000);
   Timer1.attachInterrupt(update);
+  
 }
 
 void loop() {
   // Main loop code
+  
+//buttonState = digitalRead(pin_7);  
+  
+  //lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.blink();
+  delay(1000);
+  lcd.noBlink();
 }
 
 void update() {

@@ -1,0 +1,42 @@
+NAVIGATION
+
+pin_6 = ENTER
+pin_7 = UP
+pin_8 = DOWN
+pin_9 = SAVE
+
+
+# MAIN
+01234567
+Is Alive
+23:28:46
+
+
+# MODE
+01234567
+> clock
+  alarm
+
+
+# CLOCK
+01234567
+23:38:14
+
+
+# ALARM
+01234567
+> alarm1
+  alarm2
+
+
+# ALARM1
+01234567
+06:45
+ACTIVE
+
+
+# ALARM1
+01234567
+12:30
+INACTIVE
+
